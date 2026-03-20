@@ -1,15 +1,3 @@
-"""
-kafka_to_elasticsearch.py - Đổ dữ liệu đã xử lý từ Kafka vào Elasticsearch.
-
-
-Consume dữ liệu giao thông đã qua xử lý (output của Flink Speed Layer)
-từ Kafka topic "traffic-processed", transform và bulk index vào Elasticsearch
-để phục vụ trực quan hoá real-time trên Kibana.
-
-
-Data flow:
-   traffic-raw → [Flink Speed Layer] → traffic-processed → [Module này] → Elasticsearch
-"""
 
 
 import json

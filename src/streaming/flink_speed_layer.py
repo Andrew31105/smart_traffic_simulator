@@ -1,11 +1,3 @@
-"""
-flink_speed_layer.py - Xử lý Real-time bằng Apache Flink (PyFlink).
-
-Consume dữ liệu giao thông từ Kafka, tính toán real-time:
-- Tốc độ trung bình theo sensor (Tumbling Window 30s)
-- Phát hiện tắc nghẽn (speed < 20 km/h)
-- Ghi kết quả vào Kafka topic "traffic-processed"
-"""
 
 import json
 import sys

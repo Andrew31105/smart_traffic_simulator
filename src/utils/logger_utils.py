@@ -1,7 +1,3 @@
-"""
-logger_utils.py - Hệ thống log tập trung
-Cung cấp logger chuẩn hoá cho toàn bộ dự án.
-"""
 
 import logging
 import sys
@@ -19,17 +15,6 @@ def get_logger(
     level: int = logging.INFO,
     log_to_file: bool = True,
 ) -> logging.Logger:
-    """
-    Tạo và trả về logger chuẩn hoá.
-
-    Args:
-        name: Tên module / component (vd: 'tomtom_producer', 'kafka_to_minio')
-        level: Logging level (default: INFO)
-        log_to_file: Ghi log ra file ngoài console (default: True)
-
-    Returns:
-        logging.Logger đã được cấu hình.
-    """
     logger = logging.getLogger(name)
 
     # Tránh thêm handler trùng lặp
