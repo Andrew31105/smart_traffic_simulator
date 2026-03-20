@@ -58,3 +58,11 @@
 2026-03-20 10:01:38 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773975698_3ab8b2fc.json
 2026-03-20 10:02:18 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773975738_aa9d9b90.json
 2026-03-20 10:02:58 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773975778_8c56bc02.json
+2026-03-20 10:03:38 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773975818_71600842.json
+2026-03-20 10:04:18 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773975858_0bcf968a.json
+2026-03-20 10:04:59 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773975899_70fd3b9b.json
+2026-03-20 10:05:39 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773975939_650469bd.json
+2026-03-20 10:06:19 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773975979_8cb2e109.json
+2026-03-20 10:06:59 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773976019_a4aaf499.json
+2026-03-20 10:07:39 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773976059_669bb3c5.json
+2026-03-20 10:08:19 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773976099_331d3c40.json
