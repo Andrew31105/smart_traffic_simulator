@@ -1,0 +1,25 @@
+2026-03-20 09:51:57 | INFO     | spark_batch_layer         | Dang doc du lieu tu: s3a://traffic-raw-data/*/*/*/*/*.json
+2026-03-20 09:53:17 | INFO     | spark_batch_layer         | Dang doc du lieu tu: s3a://traffic-raw-data/*/*/*/*/*.json
+2026-03-20 09:53:44 | INFO     | spark_batch_layer         | Dang doc du lieu tu: s3a://traffic-raw-data/*/*/*/*/*.json
+2026-03-20 09:54:22 | INFO     | spark_batch_layer         | Dang doc du lieu tu: s3a://traffic-raw-data/*/*/*/*/*.json
+2026-03-20 09:54:27 | INFO     | spark_batch_layer         | Hoan tat ETL transform du lieu raw
+2026-03-20 09:54:27 | INFO     | spark_batch_layer         | Hoan tat tinh toan aggregate theo gio/ngay/khu vuc
+2026-03-20 09:54:30 | INFO     | spark_batch_layer         | Da ghi cleaned parquet vao: s3a://traffic-processed-data/batch/cleaned
+2026-03-20 09:54:31 | INFO     | spark_batch_layer         | Da ghi hourly parquet vao: s3a://traffic-processed-data/batch/agg_hourly
+2026-03-20 09:54:32 | INFO     | spark_batch_layer         | Da ghi daily parquet vao: s3a://traffic-processed-data/batch/agg_daily
+2026-03-20 09:54:32 | INFO     | spark_batch_layer         | Da ghi area parquet vao: s3a://traffic-processed-data/batch/agg_area
+2026-03-20 09:54:33 | INFO     | spark_batch_layer         | Da ghi aggregate hourly vao PostgreSQL table: traffic_agg_hourly
+2026-03-20 09:54:33 | INFO     | spark_batch_layer         | Da ghi aggregate daily vao PostgreSQL table: traffic_agg_daily
+2026-03-20 09:54:34 | INFO     | spark_batch_layer         | Da ghi aggregate area vao PostgreSQL table: traffic_agg_area
+2026-03-20 09:54:34 | INFO     | spark_batch_layer         | Batch job hoan tat thanh cong
+2026-03-20 09:55:05 | INFO     | spark_batch_layer         | Dang doc du lieu tu: s3a://traffic-raw-data/*/*/*/*/*.json
+2026-03-20 09:55:10 | INFO     | spark_batch_layer         | Hoan tat ETL transform du lieu raw
+2026-03-20 09:55:10 | INFO     | spark_batch_layer         | Hoan tat tinh toan aggregate theo gio/ngay/khu vuc
+2026-03-20 09:55:12 | INFO     | spark_batch_layer         | Da ghi cleaned parquet vao: s3a://traffic-processed-data/batch/cleaned
+2026-03-20 09:55:13 | INFO     | spark_batch_layer         | Da ghi hourly parquet vao: s3a://traffic-processed-data/batch/agg_hourly
+2026-03-20 09:55:14 | INFO     | spark_batch_layer         | Da ghi daily parquet vao: s3a://traffic-processed-data/batch/agg_daily
+2026-03-20 09:55:15 | INFO     | spark_batch_layer         | Da ghi area parquet vao: s3a://traffic-processed-data/batch/agg_area
+2026-03-20 09:55:16 | INFO     | spark_batch_layer         | Da ghi aggregate hourly vao PostgreSQL table: traffic_agg_hourly
+2026-03-20 09:55:16 | INFO     | spark_batch_layer         | Da ghi aggregate daily vao PostgreSQL table: traffic_agg_daily
+2026-03-20 09:55:17 | INFO     | spark_batch_layer         | Da ghi aggregate area vao PostgreSQL table: traffic_agg_area
+2026-03-20 09:55:17 | INFO     | spark_batch_layer         | Batch job hoan tat thanh cong

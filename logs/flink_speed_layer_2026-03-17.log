@@ -1,0 +1,39 @@
+2026-03-17 17:33:12 | INFO     | flink_speed_layer         | Khởi động Flink Speed Layer...
+2026-03-17 17:33:13 | ERROR    | flink_speed_layer         | Pipeline lỗi: 'str' object has no attribute '_j_checkpoint_storage'
+Traceback (most recent call last):
+  File "/home/daoanhaz/Documents/Traffic_etl/smart-traffic-analytics/src/streaming/flink_speed_layer.py", line 224, in <module>
+    build_pipeline()
+  File "/home/daoanhaz/Documents/Traffic_etl/smart-traffic-analytics/src/streaming/flink_speed_layer.py", line 148, in build_pipeline
+    env.get_checkpoint_config().set_checkpoint_storage("file:///tmp/flink-checkpoints")
+  File "/home/daoanhaz/anaconda3/envs/myenv/lib/python3.10/site-packages/pyflink/datastream/checkpoint_config.py", line 444, in set_checkpoint_storage
+    self._j_checkpoint_config.setCheckpointStorage(storage._j_checkpoint_storage)
+AttributeError: 'str' object has no attribute '_j_checkpoint_storage'
+2026-03-17 17:36:47 | INFO     | flink_speed_layer         | Khởi động Flink Speed Layer...
+2026-03-17 17:36:48 | INFO     | flink_speed_layer         | Đã khởi tạo StreamExecutionEnvironment với JAR và Checkpoint.
+2026-03-17 17:36:48 | ERROR    | flink_speed_layer         | Pipeline lỗi: Could not found the Java class 'org.apache.flink.connector.kafka.source.KafkaSource.builder'. The Java dependencies could be specified via command line argument '--jarfile' or the config option 'pipeline.jars'
+Traceback (most recent call last):
+  File "/home/daoanhaz/Documents/Traffic_etl/smart-traffic-analytics/src/streaming/flink_speed_layer.py", line 227, in <module>
+    build_pipeline()
+  File "/home/daoanhaz/Documents/Traffic_etl/smart-traffic-analytics/src/streaming/flink_speed_layer.py", line 157, in build_pipeline
+    KafkaSource.builder()
+  File "/home/daoanhaz/anaconda3/envs/myenv/lib/python3.10/site-packages/pyflink/datastream/connectors/kafka.py", line 387, in builder
+    return KafkaSourceBuilder()
+  File "/home/daoanhaz/anaconda3/envs/myenv/lib/python3.10/site-packages/pyflink/datastream/connectors/kafka.py", line 430, in __init__
+    .KafkaSource.builder()
+  File "/home/daoanhaz/anaconda3/envs/myenv/lib/python3.10/site-packages/pyflink/util/exceptions.py", line 185, in wrapped_call
+    raise TypeError(
+TypeError: Could not found the Java class 'org.apache.flink.connector.kafka.source.KafkaSource.builder'. The Java dependencies could be specified via command line argument '--jarfile' or the config option 'pipeline.jars'
+2026-03-17 17:38:21 | INFO     | flink_speed_layer         | Khởi động Flink Speed Layer...
+2026-03-17 17:38:21 | INFO     | flink_speed_layer         | Đã khởi tạo StreamExecutionEnvironment với JAR và Checkpoint.
+2026-03-17 17:38:22 | INFO     | flink_speed_layer         | Pipeline sẵn sàng | Source: traffic-raw | Sink: traffic-processed | Window: 30s
+2026-03-17 17:38:31 | INFO     | flink_speed_layer         | [Nga Tu So] NORMAL | Avg: 26.31 km/h | Xe: 126 | Window: 2026-03-17T17:38:00 → 2026-03-17T17:38:30
+2026-03-17 17:38:31 | INFO     | flink_speed_layer         | [Cau Giay] NORMAL | Avg: 34.69 km/h | Xe: 60 | Window: 2026-03-17T17:38:00 → 2026-03-17T17:38:30
+2026-03-17 17:38:31 | INFO     | flink_speed_layer         | [Hoan Kiem] NORMAL | Avg: 28.41 km/h | Xe: 199 | Window: 2026-03-17T17:38:00 → 2026-03-17T17:38:30
+2026-03-17 17:38:31 | INFO     | flink_speed_layer         | [Ha Dong] NORMAL | Avg: 29.89 km/h | Xe: 197 | Window: 2026-03-17T17:38:00 → 2026-03-17T17:38:30
+2026-03-17 17:38:31 | INFO     | flink_speed_layer         | [Ba Dinh] NORMAL | Avg: 48.4 km/h | Xe: 257 | Window: 2026-03-17T17:38:00 → 2026-03-17T17:38:30
+2026-03-17 17:39:00 | INFO     | flink_speed_layer         | [Cau Giay] NORMAL | Avg: 31.96 km/h | Xe: 661 | Window: 2026-03-17T17:38:30 → 2026-03-17T17:39:00
+2026-03-17 17:39:00 | INFO     | flink_speed_layer         | [Ha Dong] NORMAL | Avg: 33.44 km/h | Xe: 801 | Window: 2026-03-17T17:38:30 → 2026-03-17T17:39:00
+2026-03-17 17:39:00 | INFO     | flink_speed_layer         | [Nga Tu So] NORMAL | Avg: 41.17 km/h | Xe: 830 | Window: 2026-03-17T17:38:30 → 2026-03-17T17:39:00
+2026-03-17 17:39:00 | INFO     | flink_speed_layer         | [Hoan Kiem] NORMAL | Avg: 31.98 km/h | Xe: 681 | Window: 2026-03-17T17:38:30 → 2026-03-17T17:39:00
+2026-03-17 17:39:00 | INFO     | flink_speed_layer         | [Ba Dinh] NORMAL | Avg: 34.93 km/h | Xe: 698 | Window: 2026-03-17T17:38:30 → 2026-03-17T17:39:00
+2026-03-17 17:39:14 | INFO     | flink_speed_layer         | Đã dừng Flink Speed Layer.

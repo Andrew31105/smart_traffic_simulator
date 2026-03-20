@@ -1,0 +1,900 @@
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    |   ✅ Data View 'traffic-realtime' đã tạo.
+2026-03-18 12:28:56 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 12:28:57 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 12:28:57 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 12:28:58 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 12:28:58 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 12:28:59 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 12:28:59 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 12:29:00 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 12:29:00 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 12:29:02 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 12:29:02 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 12:29:03 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 12:29:03 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 12:29:04 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 12:29:04 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 12:29:04 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 12:29:05 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 12:29:05 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:29:05 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 12:29:05 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 12:29:05 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:32:12 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 12:32:12 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 12:32:12 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 12:32:12 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:32:12 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 12:32:12 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:32:12 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 12:32:12 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 12:32:12 | INFO     | kibana_dashboard_setup    | Dọn dẹp saved objects cũ...
+2026-03-18 12:32:21 | INFO     | kibana_dashboard_setup    |   ✅ Dọn dẹp xong.
+2026-03-18 12:32:21 | INFO     | kibana_dashboard_setup    | Import 9 saved objects qua Import API...
+2026-03-18 12:32:21 | ERROR    | kibana_dashboard_setup    |   ❌ Import thất bại: 500 - {"statusCode":500,"error":"Internal Server Error","message":"An internal server error occurred. Check Kibana server logs for details."}
+2026-03-18 12:32:21 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:32:21 | WARNING  | kibana_dashboard_setup    | ⚠️  SETUP HOÀN TẤT VỚI MỘT SỐ LỖI (xem log ở trên)
+2026-03-18 12:32:21 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | Dọn dẹp saved objects cũ...
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    |   ✅ Dọn dẹp xong.
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | Import 9 saved objects qua Import API...
+2026-03-18 12:34:00 | ERROR    | kibana_dashboard_setup    |   ❌ Import thất bại: 500 - {"statusCode":500,"error":"Internal Server Error","message":"An internal server error occurred. Check Kibana server logs for details."}
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 12:34:00 | WARNING  | kibana_dashboard_setup    | ⚠️  SETUP HOÀN TẤT VỚI MỘT SỐ LỖI (xem log ở trên)
+2026-03-18 12:34:00 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    |   ✅ Data View 'traffic-realtime' đã tạo.
+2026-03-18 13:35:53 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 13:35:54 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 13:35:54 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 13:35:55 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 13:35:55 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 13:35:56 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 13:35:56 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 13:35:57 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 13:35:57 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 13:35:58 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 13:35:58 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 13:35:59 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 13:35:59 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 13:36:00 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 13:36:00 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 13:36:00 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 13:36:01 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 13:36:01 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:36:01 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 13:36:01 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 13:36:01 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 13:47:09 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 13:47:10 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 13:47:11 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 13:47:12 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 13:47:14 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 13:47:15 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 13:47:16 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 13:47:17 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 13:47:17 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 13:47:17 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 13:47:17 | ERROR    | kibana_dashboard_setup    |   ❌ Lỗi tạo Data View: 400 - {"statusCode":400,"error":"Bad Request","message":"Duplicate data view: traffic-realtime"}
+2026-03-18 13:47:17 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 13:47:18 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 13:47:18 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 13:47:19 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 13:47:19 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 13:47:20 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 13:47:20 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 13:47:21 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 13:47:21 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 13:47:22 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 13:47:22 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 13:47:23 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 13:47:23 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 13:47:24 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 13:47:24 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 13:47:24 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 13:47:25 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 13:47:25 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:47:25 | WARNING  | kibana_dashboard_setup    | ⚠️  SETUP HOÀN TẤT VỚI MỘT SỐ LỖI (xem log ở trên)
+2026-03-18 13:47:25 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:50:24 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 13:50:24 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 13:50:24 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 13:50:24 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:50:24 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 13:50:24 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:50:24 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 13:50:24 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 13:50:24 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 13:50:25 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 13:50:26 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 13:50:27 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 13:50:28 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 13:50:29 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 13:50:30 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 13:50:31 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 13:50:32 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 13:50:32 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 13:50:32 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 13:50:32 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 13:50:32 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 13:50:33 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 13:50:33 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 13:50:34 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 13:50:34 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 13:50:35 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 13:50:35 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 13:50:36 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 13:50:36 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 13:50:37 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 13:50:37 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 13:50:38 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 13:50:38 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 13:50:39 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 13:50:39 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 13:50:39 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 13:50:40 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 13:50:40 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:50:40 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 13:50:40 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 13:50:40 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 13:58:06 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 13:58:07 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 13:58:07 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 13:58:08 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 13:58:08 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 13:58:09 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 13:58:09 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 13:58:10 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 13:58:10 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 13:58:11 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 13:58:11 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 13:58:12 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 13:58:12 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 13:58:13 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 13:58:13 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 13:58:13 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 13:58:14 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 13:58:14 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 13:58:14 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 13:58:14 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 13:58:14 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 14:00:30 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 14:00:31 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 14:00:32 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 14:00:33 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 14:00:34 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 14:00:35 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 14:00:36 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 14:00:37 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 14:00:37 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 14:00:37 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 14:00:37 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 14:00:37 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 14:00:38 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 14:00:38 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 14:00:39 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 14:00:39 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 14:00:40 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 14:00:40 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 14:00:41 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 14:00:41 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 14:00:42 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 14:00:42 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 14:00:43 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 14:00:43 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 14:00:45 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 14:00:45 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 14:00:45 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 14:00:46 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 14:00:46 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 14:00:46 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 14:00:46 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 14:00:46 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | Smart Traffic Analytics - Kibana Dashboard Setup
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | BAT DAU SETUP KIBANA DASHBOARD
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | Kibana đã sẵn sàng.
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | Import thành công: 9 objects.
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | SETUP HOAN TAT
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | Dashboard URL: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 14:29:42 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    |   ✅ Data View 'traffic-realtime' đã tạo.
+2026-03-18 17:25:06 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 17:25:07 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 17:25:07 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 17:25:08 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 17:25:08 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 17:25:09 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 17:25:09 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 17:25:10 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 17:25:10 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 17:25:11 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 17:25:11 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 17:25:12 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 17:25:12 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 17:25:13 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 17:25:13 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 17:25:13 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 17:25:14 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 17:25:14 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:25:14 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 17:25:14 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 17:25:14 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:31:19 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 17:31:19 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 17:31:19 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 17:31:19 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:31:19 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 17:31:19 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:31:19 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 17:31:19 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 17:31:19 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 17:31:20 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 17:31:21 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 17:31:22 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 17:31:23 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 17:31:24 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 17:31:25 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 17:31:26 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 17:31:27 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 17:31:27 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 17:31:27 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 17:31:27 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 17:31:27 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 17:31:28 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 17:31:28 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 17:31:29 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 17:31:29 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 17:31:30 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 17:31:30 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 17:31:31 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 17:31:31 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 17:31:32 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 17:31:32 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 17:31:33 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 17:31:33 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 17:31:34 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 17:31:34 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 17:31:34 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 17:31:35 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 17:31:35 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:31:35 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 17:31:35 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 17:31:35 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:44:09 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 17:44:09 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 17:44:09 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 17:44:09 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:44:09 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 17:44:09 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:44:09 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 17:44:09 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 17:44:09 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 17:44:10 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 17:44:11 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 17:44:12 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 17:44:13 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 17:44:14 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 17:44:15 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 17:44:16 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 17:44:17 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 17:44:17 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 17:44:17 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 17:44:17 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 17:44:17 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 17:44:18 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 17:44:18 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 17:44:19 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 17:44:19 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 17:44:20 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 17:44:20 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 17:44:21 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 17:44:21 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 17:44:22 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 17:44:22 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 17:44:23 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 17:44:23 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 17:44:24 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 17:44:24 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 17:44:24 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 17:44:25 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 17:44:25 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 17:44:25 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 17:44:25 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 17:44:25 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:21:31 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 19:21:31 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 19:21:31 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 19:21:31 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:21:31 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 19:21:31 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:21:31 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 19:21:31 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 19:21:31 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 19:21:32 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 19:21:33 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 19:21:34 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 19:21:35 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 19:21:36 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 19:21:37 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 19:21:38 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 19:21:39 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 19:21:39 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 19:21:39 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 19:21:39 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 19:21:39 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 19:21:40 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 19:21:40 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 19:21:41 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 19:21:41 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 19:21:42 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 19:21:42 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 19:21:43 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 19:21:43 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 19:21:44 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 19:21:44 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 19:21:45 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 19:21:45 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 19:21:46 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 19:21:46 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 19:21:46 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 19:21:47 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 19:21:47 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:21:47 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 19:21:47 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 19:21:47 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 19:31:09 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 19:31:10 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 19:31:11 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 19:31:12 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 19:31:13 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 19:31:14 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 19:31:15 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 19:31:16 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 19:31:16 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 19:31:16 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 19:31:16 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 19:31:16 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 19:31:17 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 19:31:17 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 19:31:18 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 19:31:18 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 19:31:19 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 19:31:19 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 19:31:20 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 19:31:20 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 19:31:21 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 19:31:21 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 19:31:22 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 19:31:22 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 19:31:23 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 19:31:23 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 19:31:23 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 19:31:24 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 19:31:24 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:31:24 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 19:31:24 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 19:31:24 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 19:33:01 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 19:33:02 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 19:33:03 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 19:33:04 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 19:33:05 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 19:33:06 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 19:33:07 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 19:33:08 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 19:33:08 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 19:33:08 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 19:33:08 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 19:33:08 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 19:33:09 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 19:33:09 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 19:33:10 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 19:33:10 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 19:33:11 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 19:33:11 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 19:33:12 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 19:33:12 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 19:33:13 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 19:33:13 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 19:33:14 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 19:33:14 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 19:33:15 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 19:33:15 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 19:33:15 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 19:33:16 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 19:33:16 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:33:16 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 19:33:16 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 19:33:16 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 19:33:52 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 19:33:53 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 19:33:54 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 19:33:55 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 19:33:56 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 19:33:57 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 19:33:58 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 19:33:59 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 19:33:59 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 19:33:59 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 19:33:59 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 19:33:59 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 19:34:00 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 19:34:00 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 19:34:01 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 19:34:01 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 19:34:02 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 19:34:02 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 19:34:03 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 19:34:03 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 19:34:04 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 19:34:04 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 19:34:05 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 19:34:05 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 19:34:06 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 19:34:06 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 19:34:06 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 19:34:07 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 19:34:07 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:34:07 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 19:34:07 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 19:34:07 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 19:35:56 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 19:35:57 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 19:35:58 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 19:36:00 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 19:36:01 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 19:36:02 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 19:36:03 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 19:36:04 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 19:36:04 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 19:36:04 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 19:36:04 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 19:36:04 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 19:36:05 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 19:36:05 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 19:36:06 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 19:36:06 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 19:36:07 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 19:36:07 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 19:36:08 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 19:36:08 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 19:36:09 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 19:36:09 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 19:36:10 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 19:36:10 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 19:36:11 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 19:36:11 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 19:36:11 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 19:36:12 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 19:36:12 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:36:12 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 19:36:12 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 19:36:12 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:38:08 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 19:38:08 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 19:38:08 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 19:38:08 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:38:08 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 19:38:08 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:38:08 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 19:38:08 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 19:38:08 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 19:38:09 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 19:38:10 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 19:38:11 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 19:38:12 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 19:38:13 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 19:38:14 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 19:38:15 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 19:38:16 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 19:38:16 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 19:38:16 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 19:38:16 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 19:38:16 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 19:38:17 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 19:38:17 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 19:38:18 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 19:38:18 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 19:38:19 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 19:38:19 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 19:38:20 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 19:38:20 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 19:38:21 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 19:38:21 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 19:38:22 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 19:38:22 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 19:38:23 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 19:38:23 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 19:38:23 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 19:38:24 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 19:38:24 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:38:24 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 19:38:24 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 19:38:24 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 19:43:44 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 19:43:45 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 19:43:46 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 19:43:47 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 19:43:48 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 19:43:49 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 19:43:50 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 19:43:51 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 19:43:51 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 19:43:51 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 19:43:51 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 19:43:51 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 19:43:52 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 19:43:52 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 19:43:53 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 19:43:53 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 19:43:54 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 19:43:54 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 19:43:55 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 19:43:55 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 19:43:56 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 19:43:56 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 19:43:57 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 19:43:57 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 19:43:58 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 19:43:58 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 19:43:58 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 19:43:59 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 19:43:59 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:43:59 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 19:43:59 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 19:43:59 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:45:51 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 19:45:51 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 19:45:51 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 19:45:51 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:45:51 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 19:45:51 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:45:51 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 19:45:51 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 19:45:51 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 19:45:52 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 19:45:53 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 19:45:54 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 19:45:55 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 19:45:56 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 19:45:57 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 19:45:58 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 19:45:59 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 19:45:59 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 19:45:59 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 19:45:59 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 19:45:59 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 19:46:00 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 19:46:00 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 19:46:01 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 19:46:01 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 19:46:02 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 19:46:02 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 19:46:03 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 19:46:03 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 19:46:04 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 19:46:04 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 19:46:05 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 19:46:05 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 19:46:06 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 19:46:06 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 19:46:06 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 19:46:07 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 19:46:07 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:46:07 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 19:46:07 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 19:46:07 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:47:00 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 19:47:00 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 19:47:00 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 19:47:00 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:47:00 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 19:47:00 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:47:00 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 19:47:00 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 19:47:00 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 19:47:01 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 19:47:02 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 19:47:03 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 19:47:04 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 19:47:05 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 19:47:06 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 19:47:07 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 19:47:08 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 19:47:08 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 19:47:08 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 19:47:08 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 19:47:08 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 19:47:09 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 19:47:09 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 19:47:10 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 19:47:10 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 19:47:11 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 19:47:11 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 19:47:12 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 19:47:12 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 19:47:13 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 19:47:13 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 19:47:14 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 19:47:14 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 19:47:15 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 19:47:15 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 19:47:15 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 19:47:16 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 19:47:16 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 19:47:16 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 19:47:16 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 19:47:16 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    |   ✅ Data View 'traffic-realtime' đã tạo.
+2026-03-18 21:19:58 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 21:19:59 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 21:19:59 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 21:20:00 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 21:20:00 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 21:20:01 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 21:20:01 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 21:20:02 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 21:20:02 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 21:20:03 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 21:20:03 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 21:20:04 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 21:20:04 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 21:20:05 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 21:20:05 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 21:20:05 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 21:20:06 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 21:20:06 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:20:06 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 21:20:06 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 21:20:06 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:29:57 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 21:29:57 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 21:29:57 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 21:29:57 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:29:57 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 21:29:57 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:29:57 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 21:29:57 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 21:29:57 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 21:29:58 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 21:29:59 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 21:30:00 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 21:30:01 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 21:30:02 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 21:30:03 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 21:30:04 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 21:30:05 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 21:30:05 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 21:30:05 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 21:30:05 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 21:30:05 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 21:30:06 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 21:30:06 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 21:30:07 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 21:30:07 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 21:30:08 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 21:30:08 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 21:30:09 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 21:30:09 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 21:30:10 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 21:30:10 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 21:30:11 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 21:30:11 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 21:30:12 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 21:30:12 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 21:30:12 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 21:30:13 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 21:30:13 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:30:13 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 21:30:13 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 21:30:13 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:35:54 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 21:35:54 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 21:35:54 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 21:35:54 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:35:54 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 21:35:54 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:35:54 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 21:35:54 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 21:35:54 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 21:35:55 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 21:35:56 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 21:35:57 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 21:35:58 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 21:35:59 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 21:36:00 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 21:36:01 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 21:36:02 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 21:36:02 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 21:36:02 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 21:36:02 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 21:36:02 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 21:36:03 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 21:36:03 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 21:36:04 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 21:36:04 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 21:36:05 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 21:36:05 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 21:36:06 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 21:36:06 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 21:36:07 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 21:36:07 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 21:36:08 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 21:36:08 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 21:36:09 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 21:36:09 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 21:36:09 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 21:36:10 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 21:36:10 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:36:10 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 21:36:10 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 21:36:10 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:40:31 | INFO     | kibana_dashboard_setup    | 🚦 Smart Traffic Analytics — Kibana Dashboard Setup
+2026-03-18 21:40:31 | INFO     | kibana_dashboard_setup    |    Kibana URL: http://localhost:5601
+2026-03-18 21:40:31 | INFO     | kibana_dashboard_setup    | Kibana URL: http://localhost:5601
+2026-03-18 21:40:31 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:40:31 | INFO     | kibana_dashboard_setup    | 🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD
+2026-03-18 21:40:31 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:40:31 | INFO     | kibana_dashboard_setup    | Đợi Kibana sẵn sàng (timeout=120s)...
+2026-03-18 21:40:31 | INFO     | kibana_dashboard_setup    | ✅ Kibana sẵn sàng!
+2026-03-18 21:40:31 | INFO     | kibana_dashboard_setup    | 🗑️  Xóa saved objects cũ...
+2026-03-18 21:40:32 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa dashboard/smart-traffic-dashboard
+2026-03-18 21:40:33 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/traffic-map-viz
+2026-03-18 21:40:34 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/avg-speed-over-time-viz
+2026-03-18 21:40:35 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/vehicle-count-viz
+2026-03-18 21:40:36 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/congestion-pie-viz
+2026-03-18 21:40:37 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/speed-metrics-viz
+2026-03-18 21:40:38 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/sensor-table-viz
+2026-03-18 21:40:39 | INFO     | kibana_dashboard_setup    |   🗑️  Đã xóa visualization/total-vehicles-viz
+2026-03-18 21:40:39 | INFO     | kibana_dashboard_setup    |   ✅ Đã xóa xong saved objects cũ.
+2026-03-18 21:40:39 | INFO     | kibana_dashboard_setup    | Tạo Data View: traffic-realtime...
+2026-03-18 21:40:39 | INFO     | kibana_dashboard_setup    |   ℹ️  Data View 'traffic-realtime' đã tồn tại.
+2026-03-18 21:40:39 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🗺️ Traffic Map - Bản đồ giao thông...
+2026-03-18 21:40:40 | INFO     | kibana_dashboard_setup    |     ✅ 🗺️ Traffic Map - Bản đồ giao thông
+2026-03-18 21:40:40 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📊 Tốc độ trung bình theo thời gian...
+2026-03-18 21:40:41 | INFO     | kibana_dashboard_setup    |     ✅ 📊 Tốc độ trung bình theo thời gian
+2026-03-18 21:40:41 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🚗 Lưu lượng xe theo thời gian...
+2026-03-18 21:40:42 | INFO     | kibana_dashboard_setup    |     ✅ 🚗 Lưu lượng xe theo thời gian
+2026-03-18 21:40:42 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔴 Tỷ lệ mức độ tắc nghẽn...
+2026-03-18 21:40:43 | INFO     | kibana_dashboard_setup    |     ✅ 🔴 Tỷ lệ mức độ tắc nghẽn
+2026-03-18 21:40:43 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📈 Tốc độ hiện tại (Avg / Min / Max)...
+2026-03-18 21:40:44 | INFO     | kibana_dashboard_setup    |     ✅ 📈 Tốc độ hiện tại (Avg / Min / Max)
+2026-03-18 21:40:44 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 📋 Chi tiết theo Sensor...
+2026-03-18 21:40:45 | INFO     | kibana_dashboard_setup    |     ✅ 📋 Chi tiết theo Sensor
+2026-03-18 21:40:45 | INFO     | kibana_dashboard_setup    |   Tạo visualization: 🔢 Tổng số phương tiện...
+2026-03-18 21:40:46 | INFO     | kibana_dashboard_setup    |     ✅ 🔢 Tổng số phương tiện
+2026-03-18 21:40:46 | INFO     | kibana_dashboard_setup    | Đã tạo 7/7 visualizations.
+2026-03-18 21:40:46 | INFO     | kibana_dashboard_setup    | Tạo Dashboard: 🚦 Smart Traffic Analytics - Real-time Dashboard...
+2026-03-18 21:40:47 | INFO     | kibana_dashboard_setup    |   ✅ Dashboard '🚦 Smart Traffic Analytics - Real-time Dashboard' đã tạo!
+2026-03-18 21:40:47 | INFO     | kibana_dashboard_setup    | ============================================================
+2026-03-18 21:40:47 | INFO     | kibana_dashboard_setup    | ✅ SETUP HOÀN TẤT!
+2026-03-18 21:40:47 | INFO     | kibana_dashboard_setup    |    Mở Dashboard tại: http://localhost:5601/app/dashboards#/view/smart-traffic-dashboard
+2026-03-18 21:40:47 | INFO     | kibana_dashboard_setup    | ============================================================
