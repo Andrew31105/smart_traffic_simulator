@@ -1,11 +1,11 @@
 # Smart Traffic Analytics
 
-He thong phan tich giao thong theo mo hinh Lambda Architecture:
+Traffic analytics system built on a Lambda Architecture model:
 
 - Speed Layer (real-time): Kafka -> Flink -> Kafka -> Elasticsearch -> Kibana
 - Batch Layer (historical): Kafka -> MinIO (raw) -> Spark -> MinIO (processed) + PostgreSQL
 
-## 1) Kien truc tong quan
+## 1) High-Level Architecture
 
 ```
 Traffic Simulator
@@ -26,9 +26,9 @@ Kafka topic: traffic-raw
                  +--> PostgreSQL (traffic_agg_hourly / daily / area)
 ```
 
-## 2) Cong nghe
+## 2) Technologies
 
-| Thanh phan | Cong nghe |
+| Component | Technology |
 |---|---|
 | Message Broker | Apache Kafka |
 | Streaming | Apache Flink (PyFlink) |
@@ -38,7 +38,7 @@ Kafka topic: traffic-raw
 | Relational DB | PostgreSQL |
 | Orchestration | Docker Compose |
 
-## 3) Cau truc du an
+## 3) Project Structure
 
 ```
 smart-traffic-analytics/
@@ -67,20 +67,20 @@ smart-traffic-analytics/
 └── README.md
 ```
 
-## 4) Chuan bi moi truong
+## 4) Environment Setup
 
-Yeu cau:
+Requirements:
 
 - Docker + Docker Compose
 - Python 3.10+
 
-Cai thu vien Python:
+Install Python dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Khoi dong ha tang:
+Start infrastructure:
 
 ```bash
 cd docker
@@ -96,11 +96,11 @@ Service ports:
 - Kibana: `http://localhost:5601`
 - PostgreSQL: `localhost:5432`
 
-## 5) Cau hinh `.env`
+## 5) `.env` Configuration
 
-Project doc bien moi truong tai `src/utils/config.py`.
+The project loads environment variables from `src/utils/config.py`.
 
-Gia tri mac dinh da du de chay local, nhung ban co the override qua `.env`, vi du:
+Default values are enough for local runs, but you can override them in `.env`, for example:
 
 ```env
 KAFKA_BOOTSTRAP_SERVERS=localhost:9092
@@ -122,9 +122,9 @@ SPARK_MASTER=local[*]
 SPARK_APP_NAME=TrafficBatchProcessor
 ```
 
-## 6) Cach chay toan bo pipeline
+## 6) Run The Full Pipeline
 
-Nen mo 5 terminal rieng:
+Open 5 separate terminals:
 
 Terminal 1 - Producer:
 
@@ -150,18 +150,18 @@ Terminal 4 - Sink Kafka processed -> Elasticsearch:
 python src/streaming/kafka_to_elasticsearch.py
 ```
 
-Terminal 5 - Batch Layer Spark:
+Terminal 5 - Spark Batch Layer:
 
 ```bash
 python src/batch/spark_batch_layer.py
 ```
 
-## 7) Ket qua mong doi
+## 7) Expected Outputs
 
 ### 7.1 MinIO
 
-- Raw data NDJSON trong bucket `traffic-raw-data`
-- Batch output Parquet trong bucket `traffic-processed-data`:
+- Raw NDJSON data in bucket `traffic-raw-data`
+- Batch Parquet output in bucket `traffic-processed-data`:
   - `batch/cleaned`
   - `batch/agg_hourly`
   - `batch/agg_daily`
@@ -169,7 +169,7 @@ python src/batch/spark_batch_layer.py
 
 ### 7.2 PostgreSQL
 
-Bang aggregate duoc ghi boi Spark:
+Aggregate tables written by Spark:
 
 - `traffic_agg_hourly`
 - `traffic_agg_daily`
@@ -177,44 +177,45 @@ Bang aggregate duoc ghi boi Spark:
 
 ### 7.3 Kibana
 
-Sau khi co du lieu Elasticsearch, setup dashboard:
+After Elasticsearch has data, set up the dashboard:
 
 ```bash
 python src/dashboard/setup_kibana_dashboard.py
 ```
 
-Truy cap: `http://localhost:5601`
+Open: `http://localhost:5601`
 
 ## 8) Logging
 
-- Cac module dung logger chung trong `src/utils/logger_utils.py`
-- Log duoc ghi vao thu muc `logs/`
+- All modules use the shared logger in `src/utils/logger_utils.py`
+- Logs are written to the `logs/` directory
 
-## 9) Troubleshooting nhanh
+## 9) Quick Troubleshooting
 
 1. Spark warning `hostname resolves to loopback`
-    - Chi la warning local, khong chan pipeline.
+    - This is a common local warning and does not block the pipeline.
 2. Spark warning `Unable to load native-hadoop library`
-    - Thuong gap tren local, co the bo qua.
-3. Batch khong doc duoc MinIO
-    - Kiem tra `MINIO_ENDPOINT`, key/secret, bucket raw da ton tai.
-4. Batch khong ghi duoc PostgreSQL
-    - Kiem tra Postgres container dang chay va thong tin `POSTGRES_*`.
-5. Kibana khong co data
-    - Kiem tra module `kafka_to_elasticsearch.py` co dang consume topic processed hay khong.
+    - This is common in local environments and can usually be ignored.
+3. Batch layer cannot read from MinIO
+    - Check `MINIO_ENDPOINT`, access key/secret, and ensure the raw bucket exists.
+4. Batch layer cannot write to PostgreSQL
+    - Verify the Postgres container is running and `POSTGRES_*` values are correct.
+5. Kibana shows no data
+    - Verify `kafka_to_elasticsearch.py` is consuming from the processed topic.
 
-## 10) Lenh huu ich
+## 10) Useful Commands
 
-Dung nhanh trang thai containers:
+Check container status:
 
 ```bash
 cd docker
 docker compose ps
 ```
 
-Xem logs 1 service:
+View logs for one service:
 
 ```bash
 cd docker
 docker compose logs -f postgres
 ```
+
