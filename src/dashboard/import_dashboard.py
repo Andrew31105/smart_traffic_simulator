@@ -127,12 +127,12 @@ def import_to_kibana(ndjson_content: str):
         logger.info(json.dumps(result, indent=2, ensure_ascii=False))
 
         if resp.status_code == 200 and result.get("success"):
-            logger.info("✅ Import thành công!")
+            logger.info("Import thành công!")
             count = result.get("successCount", 0)
             logger.info(f"   Đã import {count} objects.")
             return True
         else:
-            logger.error(f"❌ Import thất bại!")
+            logger.error("Import thất bại!")
             errors = result.get("errors", [])
             for err in errors:
                 logger.error(f"   - {err.get('id')}: {err.get('error', {}).get('message', 'unknown')}")
@@ -142,20 +142,20 @@ def import_to_kibana(ndjson_content: str):
 
 
 def main():
-    logger.info("🚦 Smart Traffic Analytics — Kibana Dashboard Import")
+    logger.info("Smart Traffic Analytics - Kibana Dashboard Import")
     logger.info(f"   Kibana URL: {KIBANA_URL}")
 
     # Build NDJSON
-    logger.info("📦 Building NDJSON...")
+    logger.info("Building NDJSON...")
     ndjson = build_ndjson()
     logger.info(f"   {ndjson.count(chr(10)) + 1} objects to import")
 
     # Import
-    logger.info("📤 Importing to Kibana...")
+    logger.info("Importing to Kibana...")
     ok = import_to_kibana(ndjson)
 
     if ok:
-        logger.info(f"🔗 Dashboard: {KIBANA_URL}/app/dashboards#/view/smart-traffic-dashboard")
+        logger.info(f"Dashboard: {KIBANA_URL}/app/dashboards#/view/smart-traffic-dashboard")
 
     sys.exit(0 if ok else 1)
 

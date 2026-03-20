@@ -70,7 +70,7 @@ class KibanaDashboardSetup:
                     data = resp.json()
                     status = data.get("status", {}).get("overall", {}).get("level", "")
                     if status == "available":
-                        logger.info("✅ Kibana sẵn sàng!")
+                        logger.info("Kibana sẵn sàng!")
                         return True
                     logger.info(f"Kibana status: {status}, đợi thêm...")
             except requests.ConnectionError:
@@ -95,19 +95,19 @@ class KibanaDashboardSetup:
                 timeout=10,
             )
             if resp.status_code == 200:
-                logger.info(f"  🗑️  Đã xóa {obj_type}/{obj_id}")
+                logger.info(f"  Đã xóa {obj_type}/{obj_id}")
             elif resp.status_code == 404:
-                logger.debug(f"  ℹ️  {obj_type}/{obj_id} không tồn tại, bỏ qua.")
+                logger.debug(f"  {obj_type}/{obj_id} không tồn tại, bỏ qua.")
             else:
                 logger.warning(
-                    f"  ⚠️  Lỗi xóa {obj_type}/{obj_id}: {resp.status_code}"
+                    f"  Lỗi xóa {obj_type}/{obj_id}: {resp.status_code}"
                 )
         except Exception as e:
-            logger.warning(f"  ⚠️  Lỗi xóa {obj_type}/{obj_id}: {e}")
+            logger.warning(f"    Lỗi xóa {obj_type}/{obj_id}: {e}")
 
     def delete_all_old_objects(self):
         """Xóa tất cả saved objects cũ (dashboard, visualizations)."""
-        logger.info("🗑️  Xóa saved objects cũ...")
+        logger.info("Xóa saved objects cũ...")
 
         # Xóa dashboard trước
         dash = self.objects["dashboard"]
@@ -117,7 +117,7 @@ class KibanaDashboardSetup:
         for viz in self.objects["visualizations"]:
             self.delete_saved_object("visualization", viz["id"])
 
-        logger.info("  ✅ Đã xóa xong saved objects cũ.")
+        logger.info("  Đã xóa xong saved objects cũ.")
 
     # ---------------------------------------------------------
     # Tạo Data View (Index Pattern)
@@ -148,14 +148,14 @@ class KibanaDashboardSetup:
         )
 
         if resp.status_code == 200:
-            logger.info(f"  ✅ Data View '{ip['attributes']['title']}' đã tạo.")
+            logger.info(f"  Data View '{ip['attributes']['title']}' đã tạo.")
             return True
         elif resp.status_code in (400, 409) and "Duplicate" in resp.text:
-            logger.info(f"  ℹ️  Data View '{ip['attributes']['title']}' đã tồn tại.")
+            logger.info(f"  Data View '{ip['attributes']['title']}' đã tồn tại.")
             return True
         else:
             logger.error(
-                f"  ❌ Lỗi tạo Data View: {resp.status_code} - {resp.text}"
+                f"  Lỗi tạo Data View: {resp.status_code} - {resp.text}"
             )
             return False
 
@@ -268,7 +268,7 @@ class KibanaDashboardSetup:
         )
 
         if resp.status_code == 200:
-            logger.info(f"  ✅ Dashboard '{title}' đã tạo!")
+            logger.info(f"  Dashboard '{title}' đã tạo!")
             return True
         elif resp.status_code == 409:
             resp = requests.put(
@@ -298,7 +298,7 @@ class KibanaDashboardSetup:
             bool: True nếu setup thành công hoàn toàn.
         """
         logger.info("=" * 60)
-        logger.info("🚦 BẮT ĐẦU SETUP KIBANA DASHBOARD")
+        logger.info("BẮT ĐẦU SETUP KIBANA DASHBOARD")
         logger.info("=" * 60)
 
         # 1. Đợi Kibana sẵn sàng
@@ -332,13 +332,13 @@ class KibanaDashboardSetup:
         # 6. Tổng kết
         logger.info("=" * 60)
         if success:
-            logger.info("✅ SETUP HOÀN TẤT!")
+            logger.info("SETUP HOÀN TẤT!")
             logger.info(
                 f"   Mở Dashboard tại: "
                 f"{self.kibana_url}/app/dashboards#/view/smart-traffic-dashboard"
             )
         else:
-            logger.warning("⚠️  SETUP HOÀN TẤT VỚI MỘT SỐ LỖI (xem log ở trên)")
+            logger.warning("SETUP HOÀN TẤT VỚI MỘT SỐ LỖI (xem log ở trên)")
 
         logger.info("=" * 60)
         return success
@@ -362,7 +362,7 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
 
-    logger.info("🚦 Smart Traffic Analytics — Kibana Dashboard Setup")
+    logger.info("Smart Traffic Analytics - Kibana Dashboard Setup")
     logger.info(f"   Kibana URL: {args.kibana_url}")
 
     setup = KibanaDashboardSetup(kibana_url=args.kibana_url)

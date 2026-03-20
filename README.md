@@ -185,8 +185,6 @@ python src/dashboard/setup_kibana_dashboard.py
 
 Truy cap: `http://localhost:5601`
 
-Xem them: `src/dashboard/DASHBOARD_GUIDE.md`
-
 ## 8) Logging
 
 - Cac module dung logger chung trong `src/utils/logger_utils.py`

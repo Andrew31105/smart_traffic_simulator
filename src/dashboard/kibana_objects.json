@@ -14,10 +14,10 @@
             "id": "traffic-map-viz",
             "type": "visualization",
             "attributes": {
-                "title": "🗺️ Traffic Map - Bản đồ giao thông",
+                "title": "Traffic Map - Bản đồ giao thông",
                 "description": "Bản đồ hiển thị vị trí sensor, màu sắc theo mức độ tắc nghẽn",
                 "visState": {
-                    "title": "🗺️ Traffic Map - Bản đồ giao thông",
+                    "title": "Traffic Map - Bản đồ giao thông",
                     "type": "tile_map",
                     "aggs": [
                         {
@@ -71,10 +71,10 @@
             "id": "avg-speed-over-time-viz",
             "type": "visualization",
             "attributes": {
-                "title": "📊 Tốc độ trung bình theo thời gian",
+                "title": "Tốc độ trung bình theo thời gian",
                 "description": "Biểu đồ đường hiển thị tốc độ trung bình của từng sensor theo thời gian",
                 "visState": {
-                    "title": "📊 Tốc độ trung bình theo thời gian",
+                    "title": "Tốc độ trung bình theo thời gian",
                     "type": "line",
                     "aggs": [
                         {
@@ -176,10 +176,10 @@
             "id": "vehicle-count-viz",
             "type": "visualization",
             "attributes": {
-                "title": "🚗 Lưu lượng xe theo thời gian",
+                "title": "Lưu lượng xe theo thời gian",
                 "description": "Biểu đồ cột hiển thị tổng số phương tiện theo thời gian",
                 "visState": {
-                    "title": "🚗 Lưu lượng xe theo thời gian",
+                    "title": "Lưu lượng xe theo thời gian",
                     "type": "histogram",
                     "aggs": [
                         {
@@ -279,10 +279,10 @@
             "id": "congestion-pie-viz",
             "type": "visualization",
             "attributes": {
-                "title": "🔴 Tỷ lệ mức độ tắc nghẽn",
+                "title": "Tỷ lệ mức độ tắc nghẽn",
                 "description": "Biểu đồ tròn hiển thị tỷ lệ các mức độ tắc nghẽn",
                 "visState": {
-                    "title": "🔴 Tỷ lệ mức độ tắc nghẽn",
+                    "title": "Tỷ lệ mức độ tắc nghẽn",
                     "type": "pie",
                     "aggs": [
                         {
@@ -336,10 +336,10 @@
             "id": "speed-metrics-viz",
             "type": "visualization",
             "attributes": {
-                "title": "📈 Tốc độ hiện tại (Avg / Min / Max)",
+                "title": "Tốc độ hiện tại (Avg / Min / Max)",
                 "description": "Panel hiển thị tốc độ trung bình, nhỏ nhất và lớn nhất",
                 "visState": {
-                    "title": "📈 Tốc độ hiện tại (Avg / Min / Max)",
+                    "title": "Tốc độ hiện tại (Avg / Min / Max)",
                     "type": "metric",
                     "aggs": [
                         {
@@ -425,10 +425,10 @@
             "id": "sensor-table-viz",
             "type": "visualization",
             "attributes": {
-                "title": "📋 Chi tiết theo Sensor",
+                "title": "Chi tiết theo Sensor",
                 "description": "Bảng dữ liệu chi tiết từng sensor: tốc độ, lưu lượng, mức tắc nghẽn",
                 "visState": {
-                    "title": "📋 Chi tiết theo Sensor",
+                    "title": "Chi tiết theo Sensor",
                     "type": "table",
                     "aggs": [
                         {
@@ -513,10 +513,10 @@
             "id": "total-vehicles-viz",
             "type": "visualization",
             "attributes": {
-                "title": "🔢 Tổng số phương tiện",
+                "title": "Tổng số phương tiện",
                 "description": "Metric hiển thị tổng số lượng phương tiện đã ghi nhận",
                 "visState": {
-                    "title": "🔢 Tổng số phương tiện",
+                    "title": "Tổng số phương tiện",
                     "type": "metric",
                     "aggs": [
                         {
@@ -583,7 +583,7 @@
         "id": "smart-traffic-dashboard",
         "type": "dashboard",
         "attributes": {
-            "title": "🚦 Smart Traffic Analytics - Real-time Dashboard",
+            "title": "Smart Traffic Analytics - Real-time Dashboard",
             "description": "Dashboard giám sát giao thông thời gian thực: bản đồ, tốc độ, lưu lượng và tình trạng tắc nghẽn",
             "kibanaSavedObjectMeta": {
                 "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"

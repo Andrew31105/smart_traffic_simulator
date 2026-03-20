@@ -66,3 +66,6 @@
 2026-03-20 10:06:59 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773976019_a4aaf499.json
 2026-03-20 10:07:39 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773976059_669bb3c5.json
 2026-03-20 10:08:19 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773976099_331d3c40.json
+2026-03-20 10:08:59 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773976139_0822c637.json
+2026-03-20 10:09:39 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773976179_080cbd15.json
+2026-03-20 10:10:19 | INFO     | kafka_to_minio            | ✅ Đã lưu 100 bản ghi vào: year=2026/month=03/day=20/hour=10/batch_1773976219_3a02e686.json
