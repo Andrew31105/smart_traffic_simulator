@@ -185,6 +185,10 @@ python src/dashboard/setup_kibana_dashboard.py
 
 Open: `http://localhost:5601`
 
+### 7.4 Demo Screenshot
+
+![Smart Traffic Analytics Dashboard Demo](image.png)
+
 ## 8) Logging
 
 - All modules use the shared logger in `src/utils/logger_utils.py`
