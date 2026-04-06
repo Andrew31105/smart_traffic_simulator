@@ -23,29 +23,51 @@ from src.utils.config import settings
 from src.utils.logger_utils import get_logger
 
 logger = get_logger("flink_speed_layer", log_to_file=True)
-CONGESTION_THRESHOLD = 20.0
+CONGESTION_RATIO_THRESHOLD = settings.traffic.congestion_threshold
 WINDOW_SIZE_SECONDS = 30
 
 class ParseTrafficData(MapFunction):
-    """Parse raw JSON string thành dict."""
+    """Parse raw JSON theo schema của TomTom producer."""
 
     def map(self, value: str):
         try:
             data = json.loads(value)
+
+            location_name = data["location_name"]
+            point = data["point"]
+            current_speed = float(data["current_speed"])
+            free_flow_speed = float(data["free_flow_speed"])
+
+            p_lat, p_lon = point.split(",", 1)
+            lat = float(p_lat.strip())
+            lon = float(p_lon.strip())
+
+            sensor_id = location_name.strip().upper().replace(" ", "_")
+
             return json.dumps({
-                "sensor_id": data["sensor_id"],
-                "sensor_name": data["sensor_name"],
-                "lat": data["location"]["lat"],
-                "lon": data["location"]["lon"],
-                "current_speed": float(data["current_speed"]),
-                "vehicle_count": int(data["vehicle_count"]),
-                "timestamp": data["timestamp"],
+                "sensor_id": sensor_id,
+                "sensor_name": location_name,
+                "lat": lat,
+                "lon": lon,
+                "current_speed": current_speed,
+                "free_flow_speed": free_flow_speed,
+                "timestamp": data.get("timestamp"),
             })
         except Exception as e:
-            logger.error(f"Failed to parse JSON: {e}")
+            logger.error(f"Failed to parse TomTom payload: {e}")
             return None
-def classify_congestion(avg_speed: float) -> str:
-    """Phân loại mức độ tắc nghẽn."""
+def classify_congestion(avg_speed: float, congestion_ratio: float | None) -> str:
+    """Phân loại mức độ tắc nghẽn dựa trên tỉ lệ speed/free-flow."""
+    if congestion_ratio is not None:
+        if congestion_ratio < 0.4:
+            return "SEVERE"
+        if congestion_ratio < 0.65:
+            return "MODERATE"
+        if congestion_ratio < 0.85:
+            return "LIGHT"
+        return "FREE_FLOW"
+
+    # Fallback theo tốc độ tuyệt đối nếu thiếu free-flow.
     if avg_speed < 10:
         return "SEVERE"       # Tắc nghẽn nghiêm trọng
     elif avg_speed < 20:
@@ -58,7 +80,7 @@ def classify_congestion(avg_speed: float) -> str:
 
 class TrafficWindowProcessor(ProcessWindowFunction):
     """
-    Xử lý cửa sổ: tính tốc độ trung bình, đếm xe,
+    Xử lý cửa sổ: tính tốc độ trung bình,
     và đánh dấu tắc nghẽn cho mỗi sensor.
     """
 
@@ -69,13 +91,18 @@ class TrafficWindowProcessor(ProcessWindowFunction):
 
         sample_count = len(records)
         total_speed = sum(r["current_speed"] for r in records)
-        total_vehicles = sum(r["vehicle_count"] for r in records)
+        free_flow_values = [r.get("free_flow_speed") for r in records if r.get("free_flow_speed") is not None]
 
         avg_speed = round(total_speed / sample_count, 2)
         min_speed = round(min(r["current_speed"] for r in records), 2)
         max_speed = round(max(r["current_speed"] for r in records), 2)
+        avg_free_flow_speed = round(sum(free_flow_values) / len(free_flow_values), 2) if free_flow_values else None
 
-        is_congested = avg_speed < CONGESTION_THRESHOLD
+        congestion_ratio = None
+        if avg_free_flow_speed and avg_free_flow_speed > 0:
+            congestion_ratio = round(avg_speed / avg_free_flow_speed, 3)
+
+        is_congested = congestion_ratio is not None and congestion_ratio < CONGESTION_RATIO_THRESHOLD
 
         result = {
             "sensor_id": key,
@@ -85,10 +112,12 @@ class TrafficWindowProcessor(ProcessWindowFunction):
             "avg_speed": avg_speed,
             "min_speed": min_speed,
             "max_speed": max_speed,
-            "total_vehicle_count": total_vehicles,
+            "avg_free_flow_speed": avg_free_flow_speed,
+            "congestion_ratio": congestion_ratio,
+            "total_vehicle_count": 0,
             "sample_count": sample_count,
             "is_congested": is_congested,
-            "congestion_level": classify_congestion(avg_speed),
+            "congestion_level": classify_congestion(avg_speed, congestion_ratio),
             "window_start": datetime.fromtimestamp(
                 context.window().start / 1000,
                 tz=timezone.utc,
@@ -103,7 +132,7 @@ class TrafficWindowProcessor(ProcessWindowFunction):
         status = "CONGESTED" if is_congested else "NORMAL"
         logger.info(
             f"[{result['sensor_name']}] {status} | "
-            f"Avg: {avg_speed} km/h | Xe: {total_vehicles} | "
+            f"Avg: {avg_speed} km/h | Ratio: {congestion_ratio} | "
             f"Window: {result['window_start']} → {result['window_end']}"
         )
 

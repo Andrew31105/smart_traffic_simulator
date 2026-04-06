@@ -132,7 +132,18 @@ class SparkConfig:
     postgres_jdbc_package: str = field(
         default_factory=lambda: os.getenv("SPARK_POSTGRES_JDBC_PACKAGE", "org.postgresql:postgresql:42.7.3")
     )
-
+@dataclass(frozen=True)
+class TrafficConfig:
+        """Cấu hình các điểm giám sát giao thông tại Hà Nội."""
+        locations: dict = field(default_factory=lambda: {
+            "Nga_Tu_So": "21.0047,105.8201",
+            "Cau_Giay": "21.0357,105.7938",
+            "Giai_Phong": "20.9951,105.8415",
+            "Ho_Tung_Mau": "21.0391,105.7676"
+        })
+        # Bạn có thể thêm các cấu hình nghiệp vụ khác ở đây
+        congestion_threshold: float = 0.5  # Ngưỡng bắt đầu coi là kẹt xe
+        fetch_interval: int = 120          # Giây
 
 def create_spark_session():
     """Khởi tạo SparkSession với cấu hình S3A để làm việc với MinIO."""
@@ -164,6 +175,7 @@ def create_spark_session():
     return spark
 
 
+
 class Settings:
     """Singleton quản lý toàn bộ cấu hình."""
 
@@ -183,6 +195,7 @@ class Settings:
         self.elasticsearch = ElasticsearchConfig()
         self.flink = FlinkConfig()
         self.spark = SparkConfig()
+        self.traffic = TrafficConfig()
 
 
 # Singleton instance

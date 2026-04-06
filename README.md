@@ -129,7 +129,7 @@ Open 5 separate terminals:
 Terminal 1 - Producer:
 
 ```bash
-python src/producers/traffic_simulator.py
+python src/producers/traffic_producer.py
 ```
 
 Terminal 2 - Ingestion Kafka -> MinIO:
