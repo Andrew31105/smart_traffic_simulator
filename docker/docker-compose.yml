@@ -1,5 +1,28 @@
 version: "3.8"
 
+x-airflow-common:
+  &airflow-common
+  image: apache/airflow:2.9.3
+  environment:
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://traffic_user:traffic_pass_123@postgres:5432/traffic_analytics
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session
+    AIRFLOW_ADMIN_USERNAME: ${AIRFLOW_ADMIN_USERNAME:-admin}
+    AIRFLOW_ADMIN_PASSWORD: ${AIRFLOW_ADMIN_PASSWORD:-admin}
+    AIRFLOW_ADMIN_EMAIL: ${AIRFLOW_ADMIN_EMAIL:-admin@example.com}
+  volumes:
+    - ../airflow/dags:/opt/airflow/dags
+    - ../airflow/logs:/opt/airflow/logs
+    - ../airflow/plugins:/opt/airflow/plugins
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    postgres:
+      condition: service_healthy
+  networks:
+    - traffic-net
+
 services:
   # ========================================
   # Zookeeper - Quản lý Kafka cluster
@@ -47,8 +70,8 @@ services:
       - "9000:9000"
       - "9001:9001"
     environment:
-      MINIO_ROOT_USER: minioadmin
-      MINIO_ROOT_PASSWORD: minioadmin123
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin123}
     command: server /data --console-address ":9001"
     volumes:
       - minio-data:/data
@@ -65,6 +88,9 @@ services:
       - minio
     entrypoint: /bin/sh
     command: /setup/minio_setup.sh
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin123}
     volumes:
       - ./minio_setup.sh:/setup/minio_setup.sh
     networks:
@@ -115,8 +141,89 @@ services:
       POSTGRES_DB: traffic_analytics
       POSTGRES_USER: traffic_user
       POSTGRES_PASSWORD: traffic_pass_123
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U traffic_user -d traffic_analytics"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     volumes:
       - pg-data:/var/lib/postgresql/data
+    networks:
+      - traffic-net
+
+  # ========================================
+  # Airflow Init - Khởi tạo metadata DB + user admin
+  # ========================================
+  airflow-init:
+    <<: *airflow-common
+    container_name: airflow-init
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        set -e
+        for i in {1..20}; do
+          airflow db init && break
+          echo "Waiting for metadata DB... attempt $${i}/20"
+          sleep 3
+        done
+        airflow db check
+        airflow users create \
+          --username "$${AIRFLOW_ADMIN_USERNAME}" \
+          --password "$${AIRFLOW_ADMIN_PASSWORD}" \
+          --firstname Airflow \
+          --lastname Admin \
+          --role Admin \
+          --email "$${AIRFLOW_ADMIN_EMAIL}" || true
+    restart: "no"
+
+  # ========================================
+  # Airflow Webserver
+  # ========================================
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: airflow-webserver
+    command: webserver
+    depends_on:
+      postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    networks:
+      - traffic-net
+
+  # ========================================
+  # Airflow Scheduler
+  # ========================================
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: airflow-scheduler
+    command: scheduler
+    depends_on:
+      postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    networks:
+      - traffic-net
+
+  # ========================================
+  # Airflow Triggerer
+  # ========================================
+  airflow-triggerer:
+    <<: *airflow-common
+    container_name: airflow-triggerer
+    command: triggerer
+    depends_on:
+      postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
     networks:
       - traffic-net
 
