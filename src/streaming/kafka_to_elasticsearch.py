@@ -5,9 +5,11 @@ import signal
 import sys
 import os
 from datetime import datetime, timezone
+import time
 
 
 from confluent_kafka import Consumer, KafkaError, KafkaException
+from confluent_kafka.admin import AdminClient, NewTopic
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 
@@ -27,6 +29,7 @@ logger = get_logger("kafka_to_elasticsearch", log_to_file=True)
 BATCH_SIZE = 50          # Số document gom lại trước khi bulk index
 POLL_TIMEOUT = 1.0       # Giây chờ mỗi lần poll Kafka
 FLUSH_INTERVAL = 10      # Giây tối đa trước khi flush batch dù chưa đủ BATCH_SIZE
+TOPIC_CREATE_TIMEOUT = 10
 
 
 # =========================================================
@@ -50,6 +53,8 @@ TRAFFIC_INDEX_MAPPING = {
            "avg_speed": {"type": "float"},
            "min_speed": {"type": "float"},
            "max_speed": {"type": "float"},
+           "avg_free_flow_speed": {"type": "float"},
+           "congestion_ratio": {"type": "float"},
 
 
            # --- Metrics lưu lượng ---
@@ -96,6 +101,7 @@ class ElasticsearchSink:
            retry_on_timeout=True,
        )
        self.index_name = settings.elasticsearch.index_traffic
+       self.topic_name = settings.kafka.topic_processed
        logger.info(f"Kết nối Elasticsearch tại {settings.elasticsearch.url}")
 
 
@@ -103,14 +109,14 @@ class ElasticsearchSink:
        consumer_conf = {
            "bootstrap.servers": settings.kafka.bootstrap_servers,
            "group.id": "es-sink-group",
-           "auto.offset.reset": "latest",
+           "auto.offset.reset": "earliest",
            "enable.auto.commit": True,
            "auto.commit.interval.ms": 5000,
        }
        self.consumer = Consumer(consumer_conf)
        logger.info(
            f"Kafka consumer: group=es-sink-group | "
-           f"topic={settings.kafka.topic_processed}"
+           f"topic={self.topic_name}"
        )
 
 
@@ -135,6 +141,33 @@ class ElasticsearchSink:
            f"(geo_point, keyword, float, date...)"
        )
 
+
+   # ---------------------------------------------------------
+   # Đảm bảo Kafka topic tồn tại
+   # ---------------------------------------------------------
+   def ensure_topic_exists(self):
+       """Tạo topic nếu chưa tồn tại để tránh UNKNOWN_TOPIC_OR_PART."""
+       admin = AdminClient({"bootstrap.servers": settings.kafka.bootstrap_servers})
+       metadata = admin.list_topics(timeout=TOPIC_CREATE_TIMEOUT)
+
+       if self.topic_name in metadata.topics:
+           logger.info(f"Kafka topic '{self.topic_name}' đã tồn tại.")
+           return
+
+       logger.warning(
+           f"Kafka topic '{self.topic_name}' chưa tồn tại, đang tạo mới..."
+       )
+       fs = admin.create_topics([
+           NewTopic(self.topic_name, num_partitions=1, replication_factor=1)
+       ])
+
+       future = fs.get(self.topic_name)
+       try:
+           future.result(TOPIC_CREATE_TIMEOUT)
+           logger.info(f"Đã tạo topic '{self.topic_name}' thành công.")
+       except Exception as e:
+           # Có thể topic đã được tạo bởi service khác cùng lúc.
+           logger.warning(f"Không thể tạo topic '{self.topic_name}': {e}")
 
    # ---------------------------------------------------------
    # Transform document
@@ -164,6 +197,8 @@ class ElasticsearchSink:
            "avg_speed": float(data["avg_speed"]),
            "min_speed": float(data["min_speed"]),
            "max_speed": float(data["max_speed"]),
+           "avg_free_flow_speed": float(data["avg_free_flow_speed"]) if data.get("avg_free_flow_speed") is not None else None,
+           "congestion_ratio": float(data["congestion_ratio"]) if data.get("congestion_ratio") is not None else None,
            "total_vehicle_count": int(data["total_vehicle_count"]),
            "sample_count": int(data["sample_count"]),
 
@@ -252,11 +287,14 @@ class ElasticsearchSink:
        # Tạo index nếu chưa có
        self.create_index_if_not_exists()
 
+       # Đảm bảo topic tồn tại trước khi subscribe
+       self.ensure_topic_exists()
+
 
        # Subscribe Kafka topic
-       self.consumer.subscribe([settings.kafka.topic_processed])
+       self.consumer.subscribe([self.topic_name])
        logger.info(
-           f"Bắt đầu consume từ topic '{settings.kafka.topic_processed}' "
+           f"Bắt đầu consume từ topic '{self.topic_name}' "
            f"→ ES index '{self.index_name}'"
        )
 
@@ -279,6 +317,11 @@ class ElasticsearchSink:
                            f"Đã đọc hết partition {msg.partition()} "
                            f"offset {msg.offset()}"
                        )
+                   elif msg.error().code() == KafkaError.UNKNOWN_TOPIC_OR_PART:
+                       logger.warning(
+                           f"Topic '{self.topic_name}' chưa sẵn sàng trên broker, retry sau 3 giây..."
+                       )
+                       time.sleep(3)
                    else:
                        raise KafkaException(msg.error())
                    continue
