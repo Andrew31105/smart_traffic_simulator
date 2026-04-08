@@ -1,5 +1,3 @@
-version: "3.8"
-
 x-airflow-common:
   &airflow-common
   image: apache/airflow:2.9.3
@@ -57,6 +55,11 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    healthcheck:
+      test: ["CMD-SHELL", "kafka-broker-api-versions --bootstrap-server localhost:9092 >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
     networks:
       - traffic-net
 
@@ -257,6 +260,132 @@ services:
         FLINK_PROPERTIES=
         jobmanager.rpc.address: flink-jobmanager
         taskmanager.numberOfTaskSlots: 4
+    networks:
+      - traffic-net
+
+  # ========================================
+  # Producer - TomTom -> Kafka raw
+  # ========================================
+  producer:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.streaming
+    container_name: producer
+    command: python src/producers/traffic_producer.py
+    env_file:
+      - ../.env
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      KAFKA_TOPIC_TRAFFIC_RAW: traffic-raw
+    volumes:
+      - ../logs:/app/logs
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - traffic-net
+
+  # ========================================
+  # Ingestion - Kafka raw -> MinIO
+  # ========================================
+  ingestion:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.streaming
+    container_name: ingestion
+    command: python src/ingestion/kafka_to_minio.py
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      KAFKA_TOPIC_TRAFFIC_RAW: traffic-raw
+      MINIO_ENDPOINT: minio:9000
+      MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin123}
+      MINIO_BUCKET_RAW: traffic-raw-data
+      MINIO_USE_SSL: "false"
+    volumes:
+      - ../logs:/app/logs
+    depends_on:
+      kafka:
+        condition: service_healthy
+      minio:
+        condition: service_started
+      minio-setup:
+        condition: service_started
+    restart: unless-stopped
+    networks:
+      - traffic-net
+
+  # ========================================
+  # Flink Speed Layer - Kafka raw -> Kafka processed
+  # ========================================
+  flink-speed-layer:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.streaming
+    container_name: flink-speed-layer
+    command: python src/streaming/flink_speed_layer.py
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      KAFKA_TOPIC_TRAFFIC_RAW: traffic-raw
+      KAFKA_TOPIC_TRAFFIC_PROCESSED: traffic-processed
+      KAFKA_GROUP_ID: flink-speed-layer-group
+    volumes:
+      - ../logs:/app/logs
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - traffic-net
+
+  # ========================================
+  # Elasticsearch Sink - Kafka processed -> ES
+  # ========================================
+  es-sink:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.streaming
+    container_name: es-sink
+    command: python src/streaming/kafka_to_elasticsearch.py
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      KAFKA_TOPIC_TRAFFIC_PROCESSED: traffic-processed
+      ES_HOST: elasticsearch
+      ES_PORT: 9200
+      ES_INDEX_TRAFFIC: traffic-realtime
+    volumes:
+      - ../logs:/app/logs
+    depends_on:
+      kafka:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_started
+      flink-speed-layer:
+        condition: service_started
+    restart: unless-stopped
+    networks:
+      - traffic-net
+
+  # ========================================
+  # Kibana Dashboard Setup (one-shot)
+  # ========================================
+  kibana-setup:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.streaming
+    container_name: kibana-setup
+    command: python src/dashboard/setup_kibana_dashboard.py --kibana-url http://kibana:5601
+    environment:
+      KIBANA_URL: http://kibana:5601
+    volumes:
+      - ../logs:/app/logs
+    depends_on:
+      kibana:
+        condition: service_started
+      es-sink:
+        condition: service_started
+    restart: "no"
     networks:
       - traffic-net
 
