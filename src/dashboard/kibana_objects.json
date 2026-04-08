@@ -11,63 +11,6 @@
     },
     "visualizations": [
         {
-            "id": "traffic-map-viz",
-            "type": "visualization",
-            "attributes": {
-                "title": "Traffic Map - Bản đồ giao thông",
-                "description": "Bản đồ hiển thị vị trí sensor, màu sắc theo mức độ tắc nghẽn",
-                "visState": {
-                    "title": "Traffic Map - Bản đồ giao thông",
-                    "type": "tile_map",
-                    "aggs": [
-                        {
-                            "id": "1",
-                            "enabled": true,
-                            "type": "avg",
-                            "params": {
-                                "field": "avg_speed"
-                            },
-                            "schema": "metric"
-                        },
-                        {
-                            "id": "2",
-                            "enabled": true,
-                            "type": "geohash_grid",
-                            "params": {
-                                "field": "location",
-                                "autoPrecision": true,
-                                "precision": 7
-                            },
-                            "schema": "segment"
-                        }
-                    ],
-                    "params": {
-                        "colorSchema": "Yellow to Red",
-                        "mapType": "Heatmap",
-                        "isDesaturated": false,
-                        "addTooltip": true,
-                        "heatClusterSize": 1.5,
-                        "legendPosition": "bottomright",
-                        "mapZoom": 10,
-                        "wms": {
-                            "enabled": false
-                        }
-                    }
-                },
-                "uiStateJSON": "{}",
-                "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"index\":\"traffic-realtime-pattern\",\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-                }
-            },
-            "references": [
-                {
-                    "id": "traffic-realtime-pattern",
-                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
-                    "type": "index-pattern"
-                }
-            ]
-        },
-        {
             "id": "avg-speed-over-time-viz",
             "type": "visualization",
             "attributes": {
@@ -157,109 +100,6 @@
                         "legendPosition": "right",
                         "interpolate": "linear",
                         "addTimeMarker": true
-                    }
-                },
-                "uiStateJSON": "{}",
-                "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"index\":\"traffic-realtime-pattern\",\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-                }
-            },
-            "references": [
-                {
-                    "id": "traffic-realtime-pattern",
-                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
-                    "type": "index-pattern"
-                }
-            ]
-        },
-        {
-            "id": "vehicle-count-viz",
-            "type": "visualization",
-            "attributes": {
-                "title": "Lưu lượng xe theo thời gian",
-                "description": "Biểu đồ cột hiển thị tổng số phương tiện theo thời gian",
-                "visState": {
-                    "title": "Lưu lượng xe theo thời gian",
-                    "type": "histogram",
-                    "aggs": [
-                        {
-                            "id": "1",
-                            "enabled": true,
-                            "type": "sum",
-                            "params": {
-                                "field": "total_vehicle_count"
-                            },
-                            "schema": "metric"
-                        },
-                        {
-                            "id": "2",
-                            "enabled": true,
-                            "type": "date_histogram",
-                            "params": {
-                                "field": "window_start",
-                                "interval": "auto",
-                                "min_doc_count": 1,
-                                "extended_bounds": {}
-                            },
-                            "schema": "segment"
-                        }
-                    ],
-                    "params": {
-                        "type": "histogram",
-                        "grid": {
-                            "categoryLines": false,
-                            "style": {
-                                "color": "#eee"
-                            }
-                        },
-                        "categoryAxes": [
-                            {
-                                "id": "CategoryAxis-1",
-                                "type": "category",
-                                "position": "bottom",
-                                "show": true,
-                                "style": {},
-                                "scale": {
-                                    "type": "linear"
-                                },
-                                "labels": {
-                                    "show": true,
-                                    "rotate": 0,
-                                    "filter": false,
-                                    "truncate": 100
-                                },
-                                "title": {
-                                    "text": "Thời gian"
-                                }
-                            }
-                        ],
-                        "valueAxes": [
-                            {
-                                "id": "ValueAxis-1",
-                                "name": "LeftAxis-1",
-                                "type": "value",
-                                "position": "left",
-                                "show": true,
-                                "style": {},
-                                "labels": {
-                                    "show": true,
-                                    "rotate": 0,
-                                    "filter": false,
-                                    "truncate": 100
-                                },
-                                "title": {
-                                    "text": "Số lượng xe"
-                                },
-                                "scale": {
-                                    "type": "linear",
-                                    "setYExtents": false,
-                                    "defaultYExtents": false
-                                }
-                            }
-                        ],
-                        "addTooltip": true,
-                        "addLegend": true,
-                        "legendPosition": "right"
                     }
                 },
                 "uiStateJSON": "{}",
@@ -508,75 +348,6 @@
                     "type": "index-pattern"
                 }
             ]
-        },
-        {
-            "id": "total-vehicles-viz",
-            "type": "visualization",
-            "attributes": {
-                "title": "Tổng số phương tiện",
-                "description": "Metric hiển thị tổng số lượng phương tiện đã ghi nhận",
-                "visState": {
-                    "title": "Tổng số phương tiện",
-                    "type": "metric",
-                    "aggs": [
-                        {
-                            "id": "1",
-                            "enabled": true,
-                            "type": "sum",
-                            "params": {
-                                "field": "total_vehicle_count",
-                                "customLabel": "Tổng phương tiện"
-                            },
-                            "schema": "metric"
-                        }
-                    ],
-                    "params": {
-                        "addTooltip": true,
-                        "addLegend": false,
-                        "type": "metric",
-                        "metric": {
-                            "percentageMode": false,
-                            "colorSchema": "Green to Red",
-                            "useRanges": true,
-                            "colorsRange": [
-                                {
-                                    "from": 0,
-                                    "to": 500
-                                },
-                                {
-                                    "from": 500,
-                                    "to": 2000
-                                },
-                                {
-                                    "from": 2000,
-                                    "to": 1000000
-                                }
-                            ],
-                            "labels": {
-                                "show": true
-                            },
-                            "style": {
-                                "bgFill": "#000",
-                                "bgColor": false,
-                                "labelColor": false,
-                                "subText": "vehicles",
-                                "fontSize": 48
-                            }
-                        }
-                    }
-                },
-                "uiStateJSON": "{}",
-                "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"index\":\"traffic-realtime-pattern\",\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-                }
-            },
-            "references": [
-                {
-                    "id": "traffic-realtime-pattern",
-                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
-                    "type": "index-pattern"
-                }
-            ]
         }
     ],
     "dashboard": {
@@ -584,7 +355,7 @@
         "type": "dashboard",
         "attributes": {
             "title": "Smart Traffic Analytics - Real-time Dashboard",
-            "description": "Dashboard giám sát giao thông thời gian thực: bản đồ, tốc độ, lưu lượng và tình trạng tắc nghẽn",
+            "description": "Dashboard giao thông tối giản: tốc độ hiện tại, xu hướng tốc độ, mức tắc nghẽn và chi tiết sensor",
             "kibanaSavedObjectMeta": {
                 "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
             },
@@ -596,7 +367,7 @@
                 "pause": false,
                 "value": 10000
             },
-            "optionsJSON": "{\"useMargins\":true,\"syncColors\":false,\"syncCursor\":true,\"syncTooltips\":false,\"hidePanelTitles\":false}",
+            "optionsJSON": "{\"useMargins\":true,\"syncColors\":true,\"syncCursor\":true,\"syncTooltips\":true,\"hidePanelTitles\":false}",
             "panelsJSON": [
                 {
                     "version": "8.11.0",
@@ -604,8 +375,8 @@
                     "gridData": {
                         "x": 0,
                         "y": 0,
-                        "w": 16,
-                        "h": 6,
+                        "w": 48,
+                        "h": 8,
                         "i": "panel_1"
                     },
                     "panelIndex": "panel_1",
@@ -616,10 +387,10 @@
                     "version": "8.11.0",
                     "type": "visualization",
                     "gridData": {
-                        "x": 16,
-                        "y": 0,
-                        "w": 16,
-                        "h": 6,
+                        "x": 0,
+                        "y": 8,
+                        "w": 30,
+                        "h": 13,
                         "i": "panel_2"
                     },
                     "panelIndex": "panel_2",
@@ -630,10 +401,10 @@
                     "version": "8.11.0",
                     "type": "visualization",
                     "gridData": {
-                        "x": 32,
-                        "y": 0,
-                        "w": 16,
-                        "h": 6,
+                        "x": 30,
+                        "y": 8,
+                        "w": 18,
+                        "h": 13,
                         "i": "panel_3"
                     },
                     "panelIndex": "panel_3",
@@ -645,93 +416,36 @@
                     "type": "visualization",
                     "gridData": {
                         "x": 0,
-                        "y": 6,
-                        "w": 24,
-                        "h": 15,
+                        "y": 21,
+                        "w": 48,
+                        "h": 12,
                         "i": "panel_4"
                     },
                     "panelIndex": "panel_4",
                     "embeddableConfig": {},
                     "panelRefName": "panel_panel_4"
-                },
-                {
-                    "version": "8.11.0",
-                    "type": "visualization",
-                    "gridData": {
-                        "x": 24,
-                        "y": 6,
-                        "w": 24,
-                        "h": 15,
-                        "i": "panel_5"
-                    },
-                    "panelIndex": "panel_5",
-                    "embeddableConfig": {},
-                    "panelRefName": "panel_panel_5"
-                },
-                {
-                    "version": "8.11.0",
-                    "type": "visualization",
-                    "gridData": {
-                        "x": 0,
-                        "y": 21,
-                        "w": 16,
-                        "h": 8,
-                        "i": "panel_6"
-                    },
-                    "panelIndex": "panel_6",
-                    "embeddableConfig": {},
-                    "panelRefName": "panel_panel_6"
-                },
-                {
-                    "version": "8.11.0",
-                    "type": "visualization",
-                    "gridData": {
-                        "x": 16,
-                        "y": 21,
-                        "w": 32,
-                        "h": 8,
-                        "i": "panel_7"
-                    },
-                    "panelIndex": "panel_7",
-                    "embeddableConfig": {},
-                    "panelRefName": "panel_panel_7"
                 }
             ]
         },
         "references": [
             {
-                "id": "traffic-map-viz",
+                "id": "speed-metrics-viz",
                 "name": "panel_panel_1",
                 "type": "visualization"
             },
             {
-                "id": "total-vehicles-viz",
+                "id": "avg-speed-over-time-viz",
                 "name": "panel_panel_2",
                 "type": "visualization"
             },
             {
-                "id": "speed-metrics-viz",
+                "id": "congestion-pie-viz",
                 "name": "panel_panel_3",
                 "type": "visualization"
             },
             {
-                "id": "avg-speed-over-time-viz",
-                "name": "panel_panel_4",
-                "type": "visualization"
-            },
-            {
-                "id": "vehicle-count-viz",
-                "name": "panel_panel_5",
-                "type": "visualization"
-            },
-            {
-                "id": "congestion-pie-viz",
-                "name": "panel_panel_6",
-                "type": "visualization"
-            },
-            {
                 "id": "sensor-table-viz",
-                "name": "panel_panel_7",
+                "name": "panel_panel_4",
                 "type": "visualization"
             }
         ]

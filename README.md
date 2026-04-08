@@ -24,6 +24,12 @@ Kafka topic: traffic-raw
             Spark Batch Layer (ETL + aggregate)
                  +--> MinIO bucket: traffic-processed-data (Parquet)
                  +--> PostgreSQL (traffic_agg_hourly / daily / area)
+
+    Airflow (scheduler/orchestrator)
+        |
+        +--> Trigger DAG `traffic_batch_pipeline` (@hourly)
+               |
+               +--> Run `src/batch/spark_batch_layer.py`
 ```
 
 ## 2) Technologies
@@ -36,18 +42,24 @@ Kafka topic: traffic-raw
 | Data Lake | MinIO (S3-compatible) |
 | Search/Visualization | Elasticsearch + Kibana |
 | Relational DB | PostgreSQL |
-| Orchestration | Docker Compose |
+| Orchestration | Docker Compose + Apache Airflow |
 
 ## 3) Project Structure
 
 ```
 smart-traffic-analytics/
+├── airflow/
+│   ├── dags/
+│   │   └── traffic_batch_pipeline.py
+│   ├── logs/
+│   └── plugins/
 ├── docker/
 │   ├── docker-compose.yml
+│   ├── Dockerfile.airflow
 │   └── minio_setup.sh
 ├── src/
 │   ├── producers/
-│   │   └── traffic_simulator.py
+│   │   └── traffic_producer.py
 │   ├── ingestion/
 │   │   └── kafka_to_minio.py
 │   ├── streaming/
@@ -87,6 +99,13 @@ cd docker
 docker compose up -d
 ```
 
+Start or rebuild Airflow services (required after Dockerfile/requirements changes):
+
+```bash
+cd docker
+docker compose up -d --build airflow-init airflow-webserver airflow-scheduler airflow-triggerer
+```
+
 Service ports:
 
 - Kafka: `localhost:9092`
@@ -95,6 +114,7 @@ Service ports:
 - Elasticsearch: `http://localhost:9200`
 - Kibana: `http://localhost:5601`
 - PostgreSQL: `localhost:5432`
+- Airflow UI: `http://localhost:8080` (default `admin/admin`)
 
 ## 5) `.env` Configuration
 
@@ -123,6 +143,10 @@ SPARK_APP_NAME=TrafficBatchProcessor
 ```
 
 ## 6) Run The Full Pipeline
+
+You can run batch in 2 modes.
+
+### 6.1 Manual Mode (5 terminals)
 
 Open 5 separate terminals:
 
@@ -155,6 +179,27 @@ Terminal 5 - Spark Batch Layer:
 ```bash
 python src/batch/spark_batch_layer.py
 ```
+
+### 6.2 Airflow Mode (recommended for batch scheduling)
+
+1. Start streaming flow:
+    - Producer
+    - Kafka -> MinIO ingestion
+    - Flink speed layer
+    - Kafka processed -> Elasticsearch
+2. Open Airflow UI at `http://localhost:8080` and enable DAG `traffic_batch_pipeline`.
+3. Trigger DAG manually once (or wait for hourly schedule).
+
+The DAG executes:
+
+```text
+run_spark_batch_job -> python src/batch/spark_batch_layer.py
+```
+
+Notes:
+- DAG file path: `airflow/dags/traffic_batch_pipeline.py`
+- Airflow containers mount project source at `/opt/project`
+- Batch script uses Docker network hostnames (`minio`, `postgres`) from compose env
 
 ## 7) Expected Outputs
 
