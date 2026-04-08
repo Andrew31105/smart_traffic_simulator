@@ -1,6 +1,8 @@
 x-airflow-common:
   &airflow-common
-  image: apache/airflow:2.9.3
+  build:
+    context: ..
+    dockerfile: docker/Dockerfile.airflow
   environment:
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://traffic_user:traffic_pass_123@postgres:5432/traffic_analytics
@@ -10,10 +12,25 @@ x-airflow-common:
     AIRFLOW_ADMIN_USERNAME: ${AIRFLOW_ADMIN_USERNAME:-admin}
     AIRFLOW_ADMIN_PASSWORD: ${AIRFLOW_ADMIN_PASSWORD:-admin}
     AIRFLOW_ADMIN_EMAIL: ${AIRFLOW_ADMIN_EMAIL:-admin@example.com}
+    PYTHONPATH: /opt/project
+    MINIO_ENDPOINT: minio:9000
+    MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
+    MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin123}
+    MINIO_BUCKET_RAW: traffic-raw-data
+    MINIO_BUCKET_PROCESSED: traffic-processed-data
+    MINIO_USE_SSL: "false"
+    POSTGRES_HOST: postgres
+    POSTGRES_PORT: 5432
+    POSTGRES_DB: traffic_analytics
+    POSTGRES_USER: traffic_user
+    POSTGRES_PASSWORD: traffic_pass_123
+    SPARK_MASTER: local[*]
+    SPARK_APP_NAME: TrafficBatchProcessor
   volumes:
     - ../airflow/dags:/opt/airflow/dags
     - ../airflow/logs:/opt/airflow/logs
     - ../airflow/plugins:/opt/airflow/plugins
+    - ..:/opt/project
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     postgres:
